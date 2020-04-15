@@ -32,6 +32,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header__timezone {
@@ -46,8 +49,7 @@ body {
 .header__weather {
   margin-top: 2rem;
   min-height: 14rem;
-  margin: 0 auto;
-  width: 40rem;
+  width: 100%;
   border: 1px solid #21264e;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -71,6 +73,12 @@ body {
   -webkit-transform: translateY(-0.5rem);
           transform: translateY(-0.5rem);
   background-color: #353688;
+}
+
+@media screen and (min-width: 499px) {
+  .header__weather {
+    width: 40rem;
+  }
 }
 
 @media screen and (min-width: 899px) {
