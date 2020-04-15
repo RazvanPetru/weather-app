@@ -19,7 +19,7 @@ body {
   width: 100%;
   background-color: #090d28;
   color: #ffffff;
-  padding: 4rem 4rem;
+  padding: 4rem 2rem;
 }
 
 .header {
@@ -48,7 +48,7 @@ body {
 
 .header__weather {
   margin-top: 2rem;
-  min-height: 14rem;
+  min-height: 18rem;
   width: 100%;
   border: 1px solid #21264e;
   display: -webkit-box;
@@ -102,9 +102,8 @@ body {
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
   width: 100%;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .header__weather .weather-container .weather-temperature {
