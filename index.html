@@ -17,19 +17,20 @@
             <div id="current-location">Current location</div>
         </div>
         <div class="header__weather">
+            <div class="weather-loading"></div>
             <div class="weather-location">
-                <div id="location-timezone"> Ploiesti, Romania </div>
+                <div id="location-timezone"></div>
             </div>
             <div class="weather-container">
-                <div class="icon icon-weather">
-                    <img src="./public/img/iconfinder_rainnyday_1221020.png" alt="cloudy" width="80" height="80">
+                <div class="icon-weather">
+                    <canvas id="icon" width="80" height="80"></canvas>
                 </div>
                 <div class="weather-temperature">
-                    <p class="temperature"></p><span id="deg">&#8451;</span>
+                    <p class="temperature"></p><span id="deg"></span>
                 </div>
             </div>
             <div class="header__description">
-                <div id="temperature-description">Mostly Cloudy</div>
+                <div id="temperature-description"></div>
             </div>
         </div>
 
@@ -43,7 +44,7 @@
         </div>
 
         <div class="header__add-locations">
-            <i class="fas fa-plus"></i>
+            <i class="add-locations fas fa-plus"></i>
         </div>
     </header>
     <footer class="footer">
@@ -53,6 +54,7 @@
         </div>
     </footer>
 
+    <script src="public/js/skycons.js"></script>
     <script src="./public/js/app.js"></script>
 </body>
 

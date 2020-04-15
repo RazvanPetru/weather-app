@@ -52,7 +52,7 @@
             display: flex;
             flex-direction: row-reverse;
             width: 100%;
-            justify-content: space-around;
+            justify-content: space-evenly;
 
             .icon-weather {}
 
@@ -100,6 +100,37 @@
 
         &:hover {
             color: $white-color;
+        }
+    }
+}
+
+.weather-loading {
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $black-color;
+    animation-name: loading;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+
+    @keyframes loading {
+        0% {
+            transform: scale(1)
+        }
+
+        50% {
+            transform: scale(0.6);
+            background-color: $bleumarin-color;
+        }
+
+        100% {
+            transform: scale(1)
         }
     }
 }
