@@ -1,0 +1,28 @@
+// COLORS
+$black-color: #090d28;
+$bleumarin-color: #181c3a;
+$purple-color: #7768e5;
+$blue-color: #353688;
+$blue-matte-color: #21264e;
+$white-color: #ffffff;
+$grey-color: #c5c5c5;
+$red-color: #c51c1c;
+// FONTS
+
+$roboto:'Roboto',
+sans-serif;
+
+// BREAKPOINTS
+
+$breakpoints: (small: 499px,
+    medium: 899px,
+    large: 999px,
+    extra-large: 1399px);
+
+@mixin breakpoint($size) {
+    $breakpoint-value: map-get($breakpoints, $size);
+
+    @media screen and (min-width: $breakpoint-value) {
+        @content;
+    }
+}

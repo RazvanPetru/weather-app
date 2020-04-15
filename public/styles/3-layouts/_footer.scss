@@ -1,0 +1,10 @@
+.footer {
+    &-content {
+        font-size: 1.2rem;
+
+        #author,
+        a {
+            color: $purple-color;
+        }
+    }
+}

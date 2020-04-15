@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./public/styles/main.css">
+</head>
+
+<body>
+    <nav class="nav"></nav>
+    <header class="header">
+        <div class="header__timezone">
+            <div id="current-location">Current location</div>
+        </div>
+        <div class="header__weather">
+            <div class="weather-location">
+                <div id="location-timezone"> Ploiesti, Romania </div>
+            </div>
+            <div class="weather-container">
+                <div class="icon icon-weather">
+                    <img src="./public/img/iconfinder_rainnyday_1221020.png" alt="cloudy" width="80" height="80">
+                </div>
+                <div class="weather-temperature">
+                    <p class="temperature"></p><span id="deg">&#8451;</span>
+                </div>
+            </div>
+            <div class="header__description">
+                <div id="temperature-description">Mostly Cloudy</div>
+            </div>
+        </div>
+
+        <div class="header__search search">
+            <div class="search__location-text">
+                Other Locations
+            </div>
+            <div class="search__location-description">
+                Click the button above to add more cities
+            </div>
+        </div>
+
+        <div class="header__add-locations">
+            <i class="fas fa-plus"></i>
+        </div>
+    </header>
+    <footer class="footer">
+        <div class="footer-content">
+            Created by <span id="author"><a target="_blank" href="http://www.razvanpetru.com">Razvan Petru</a></span>
+            with <a href="https://api.darksky.net/" id="author" target="_blank">DarkSky</a> API
+        </div>
+    </footer>
+
+    <script src="./public/js/app.js"></script>
+</body>
+
+</html>

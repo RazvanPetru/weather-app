@@ -1,0 +1,101 @@
+.header {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__timezone {
+        text-align: center;
+
+        #current-location {
+            color: $purple-color;
+            padding-bottom: 2.5rem;
+        }
+    }
+
+    &__weather {
+        margin-top: 2rem;
+        min-height: 14rem;
+        margin: 0 auto;
+        width: 40rem;
+        border: 1px solid $blue-matte-color;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        background-color: $blue-matte-color;
+        box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, .2);
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            transform: translateY(-.5rem);
+            background-color: $blue-color;
+        }
+
+        @include breakpoint(medium) {
+            width: 50rem;
+            min-height: 20rem;
+        }
+
+        .weather-location {
+            #location-timezone {
+                font-size: 2.4rem;
+                padding: 1rem 0;
+            }
+        }
+
+        .weather-container {
+            display: flex;
+            flex-direction: row-reverse;
+            width: 100%;
+            justify-content: space-around;
+
+            .icon-weather {}
+
+            .weather-temperature {
+                display: flex;
+                font-size: 2.5rem;
+                align-self: center;
+
+                #deg {
+                    color: $grey-color;
+                }
+            }
+        }
+    }
+
+    &__description {
+        #temperature-description {
+            font-size: 1.8rem;
+            padding: 1rem 0;
+        }
+    }
+
+    &__search,
+    .search {
+        margin-top: 4rem;
+
+        &__location-text {
+            text-align: center;
+            color: $red-color;
+        }
+
+        &__location-description {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 1.4rem;
+            color: $grey-color;
+        }
+    }
+
+    &__add-locations {
+        margin: 3rem auto;
+        font-size: 2.5rem;
+        cursor: pointer;
+        color: $grey-color;
+
+        &:hover {
+            color: $white-color;
+        }
+    }
+}
