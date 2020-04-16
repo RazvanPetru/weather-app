@@ -4,8 +4,6 @@ window.addEventListener("load", () => {
   const temperatureDegree = document.querySelector(".temperature");
   const temperatureSummary = document.querySelector("#temperature-description");
   const degree = document.querySelector('#deg');
-  const loading = document.querySelector('.weather-loading');
-  const checkbox = document.getElementById('checkbox');
 
   let long;
   let lat;
@@ -34,7 +32,9 @@ window.addEventListener("load", () => {
           // celsius
           let celsius = (temperature - 32) * (5 / 9);
           // DOM elements
-          loading.style.display = 'none';
+          document.querySelectorAll('.weather-loading').forEach(b => {
+            b.style.display = 'none';
+          });
           // current location from API
           currentLocation.textContent = data.timezone;
           // temperature from API in CELSIUS
@@ -44,31 +44,32 @@ window.addEventListener("load", () => {
           // summary from API
           temperatureSummary.textContent = summary;
           // setting icons from SkyCons
+
           setIcons(icon, document.querySelector('#icon'));
         })
-
         .catch((error) => {
           console.log("Error", error);
         });
     });
+  }
 
-    // darkSky icons
-    function setIcons(icon, iconID) {
-      const skycons = new Skycons({
-        color: 'white'
-      });
-      const currentIcon = icon.replace(/-/g, '_').toUpperCase();
-      skycons.play();
-      return skycons.set(iconID, Skycons[currentIcon]);
-    }
+  // darkSky icons
+  function setIcons(icon, iconID) {
+    const skycons = new Skycons({
+      color: '#7768e5'
+    });
+    const currentIcon = icon.replace(/-/g, '_').toUpperCase();
+    skycons.play();
+    return skycons.set(iconID, Skycons[currentIcon]);
   }
 });
 
 // var for checkbox toggle
 const checkbox = document.getElementById('checkbox');
-const weatherContainer = document.getElementById('header__weather');
 const searchDesc = document.getElementById('description');
 const currentLocation = document.getElementById('current-location');
+const deg = document.getElementById('deg');
+const footerContent = document.getElementById('footer-content');
 
 checkbox.addEventListener('change', () => {
   //body black color
@@ -77,4 +78,12 @@ checkbox.addEventListener('change', () => {
   searchDesc.classList.toggle('dark');
 
   currentLocation.classList.toggle('dark');
+
+  deg.classList.toggle('black');
+
+  footerContent.classList.toggle('black');
+
+  document.querySelectorAll('#header__weather').forEach(b => {
+    b.classList.toggle('white');
+  });
 })

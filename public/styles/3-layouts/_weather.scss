@@ -21,9 +21,8 @@
 
     &__weather {
         margin-top: 2rem;
-        min-height: 18rem;
+        min-height: 5rem;
         width: 100%;
-        border: 1px solid $blue-matte-color;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -31,6 +30,7 @@
         background-color: $blue-matte-color;
         box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, .2);
         transition: all .3s ease-in-out;
+        border-radius: 1rem;
 
         &:hover {
             transform: translateY(-.5rem);
@@ -43,7 +43,7 @@
 
         @include breakpoint(medium) {
             width: 50rem;
-            min-height: 20rem;
+            min-height: 10rem;
         }
 
         .weather-location {
@@ -67,7 +67,24 @@
                 #deg {
                     color: $grey-color;
                 }
+
+                #deg.black {
+                    color: $blue-matte-color;
+                }
             }
+        }
+    }
+
+    &__weather.white {
+        background-color: $white-color;
+        color: $blue-matte-color;
+    }
+
+    &__weather:nth-child(2) {
+        min-height: 18rem;
+
+        @include breakpoint(medium) {
+            min-height: 20rem;
         }
     }
 
@@ -104,9 +121,10 @@
         font-size: 2.5rem;
         cursor: pointer;
         color: $grey-color;
+        transition: all .3s ease-in-out;
 
         &:hover {
-            color: $white-color;
+            color: $purple-color;
         }
     }
 }
