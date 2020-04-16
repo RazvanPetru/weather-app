@@ -18,5 +18,11 @@ body {
     width: 100%;
     background-color: $black-color;
     color: $white-color;
-    padding: 4rem 2rem;
+    padding: 1rem 2rem;
+}
+
+// dark and light toggle
+
+body.dark {
+    background-color: $white-color;
 }

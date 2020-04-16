@@ -11,12 +11,19 @@
 </head>
 
 <body>
-    <nav class="nav"></nav>
+    <nav class="nav">
+        <input type="checkbox" class="checkbox" id="checkbox">
+        <label for="checkbox" class="label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <div class="ball"></div>
+        </label>
+    </nav>
     <header class="header">
         <div class="header__timezone">
             <div id="current-location">Current location</div>
         </div>
-        <div class="header__weather">
+        <div class="header__weather" id="header__weather">
             <div class="weather-loading"></div>
             <div class="weather-location">
                 <div id="location-timezone"></div>
@@ -38,7 +45,7 @@
             <div class="search__location-text">
                 Other Locations
             </div>
-            <div class="search__location-description">
+            <div class="search__location-description" id="description">
                 Click the button above to add more cities
             </div>
         </div>

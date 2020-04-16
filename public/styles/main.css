@@ -19,7 +19,11 @@ body {
   width: 100%;
   background-color: #090d28;
   color: #ffffff;
-  padding: 4rem 2rem;
+  padding: 1rem 2rem;
+}
+
+body.dark {
+  background-color: #ffffff;
 }
 
 .header {
@@ -44,6 +48,11 @@ body {
 .header__timezone #current-location {
   color: #7768e5;
   padding-bottom: 2.5rem;
+  letter-spacing: .1rem;
+}
+
+.header__timezone #current-location.dark {
+  color: #181c3a;
 }
 
 .header__weather {
@@ -143,6 +152,11 @@ body {
   color: #c5c5c5;
 }
 
+.header__search__location-description.dark,
+.header .search__location-description.dark {
+  color: black;
+}
+
 .header__add-locations {
   margin: 3rem auto;
   font-size: 2.5rem;
@@ -213,5 +227,63 @@ body {
 .footer-content #author,
 .footer-content a {
   color: #7768e5;
+}
+
+.nav {
+  margin-bottom: 4rem;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  background-color: #353688;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 5rem;
+  position: relative;
+  padding: .5rem;
+  height: 2.6rem;
+  width: 5rem;
+}
+
+.ball {
+  background-color: #ffffff;
+  position: absolute;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  height: 2.2rem;
+  width: 2.2rem;
+  -webkit-transition: -webkit-transform .2s linear;
+  transition: -webkit-transform .2s linear;
+  transition: transform .2s linear;
+  transition: transform .2s linear, -webkit-transform .2s linear;
+}
+
+.checkbox:checked + .label .ball {
+  -webkit-transform: translateX(2.4rem);
+          transform: translateX(2.4rem);
+}
+
+.fa-moon {
+  color: #090d28;
+}
+
+.fa-sun {
+  color: #f39c12;
 }
 /*# sourceMappingURL=main.css.map */
