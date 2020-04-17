@@ -159,3 +159,40 @@
         }
     }
 }
+
+#search {
+    background-color: transparent;
+    border: none;
+    left: 50%;
+    width: 30rem;
+    border-bottom: 1px solid $purple-color;
+    padding-bottom: .5rem;
+    padding-left: .5rem;
+    font-size: 1.4rem;
+    color: $white-color;
+}
+
+#search::placeholder {
+    color: $white-color;
+}
+
+#search:focus {
+    outline: 0;
+}
+
+.close-search {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 2.5rem;
+    color: $red-color;
+    transform: translate(-50%, -50%);
+
+    @include breakpoint(medium) {
+        right: 20%;
+    }
+}
+
+.close-search:hover {
+    cursor: pointer;
+}

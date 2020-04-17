@@ -20,8 +20,14 @@
         </label>
     </nav>
     <header class="header">
+        <div class="close-search">
+            <i class="fas fa-times" id="close-search"></i>
+        </div>
         <div class="header__timezone">
             <div id="current-location">Current location</div>
+        </div>
+        <div class="search-bar" id="search-bar">
+            <input type="text" class='search' id="search" placeholder='Start typing'>
         </div>
         <div class="header__weather" id="header__weather">
             <div class="weather-loading"></div>
@@ -42,7 +48,7 @@
         </div>
 
         <div class="header__search search">
-            <div class="search__location-text">
+            <div class="search__location-text" id="other-locations">
                 Other Locations
             </div>
             <div class="search__location-description" id="description">
@@ -51,7 +57,7 @@
         </div>
 
         <div class="header__add-locations">
-            <i class="add-locations fas fa-plus"></i>
+            <i class="add-locations fas fa-plus" id="add-locations"></i>
         </div>
     </header>
     <footer class="footer">
