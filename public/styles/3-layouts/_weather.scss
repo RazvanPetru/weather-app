@@ -1,9 +1,10 @@
 .header {
-    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100%;
+    position: relative;
 
     &__timezone {
         text-align: center;
@@ -21,8 +22,8 @@
 
     &__weather {
         margin-top: 2rem;
-        min-height: 5rem;
         width: 100%;
+        min-height: 16rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -47,7 +48,9 @@
         }
 
         .weather-location {
-            #location-timezone {
+            .location-timezone {
+                justify-content: center;
+                display: flex;
                 font-size: 2.4rem;
                 padding: 1rem 0;
             }
@@ -182,11 +185,10 @@
 
 .close-search {
     position: absolute;
-    top: 5%;
-    right: 5%;
+    top: -5%;
+    right: 0%;
     font-size: 2.5rem;
     color: $red-color;
-    transform: translate(-50%, -50%);
 
     @include breakpoint(medium) {
         right: 20%;
@@ -195,4 +197,9 @@
 
 .close-search:hover {
     cursor: pointer;
+}
+
+#icon {
+    height: 6rem;
+    width: 6rem;
 }

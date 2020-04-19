@@ -2,73 +2,78 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./public/styles/main.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./public/styles/main.css" />
 </head>
 
 <body>
-    <nav class="nav">
-        <input type="checkbox" class="checkbox" id="checkbox">
-        <label for="checkbox" class="label">
-            <i class="fas fa-moon"></i>
-            <i class="fas fa-sun"></i>
-            <div class="ball"></div>
-        </label>
-    </nav>
-    <header class="header">
-        <div class="close-search">
-            <i class="fas fa-times" id="close-search"></i>
+  <nav class="nav">
+    <input type="checkbox" class="checkbox" id="checkbox" />
+    <label for="checkbox" class="label">
+      <i class="fas fa-moon"></i>
+      <i class="fas fa-sun"></i>
+      <div class="ball"></div>
+    </label>
+  </nav>
+  <header class="header">
+    <div class="close-search">
+      <i class="fas fa-times" id="close-search"></i>
+    </div>
+    <div class="header__timezone">
+      <div id="current-location">Current location</div>
+    </div>
+    <div class="search-bar" id="search-bar">
+      <input type="text" class="search" id="search" placeholder="Start typing" />
+    </div>
+    <div class="header__weather" id="header__weather">
+      <div class="weather-loading"></div>
+      <div class="weather-location">
+        <div class="location-timezone">
+          <p id="location"></p>
+          <p id="country"></p>
         </div>
-        <div class="header__timezone">
-            <div id="current-location">Current location</div>
+      </div>
+      <div class="weather-container">
+        <div class="icon-weather"></div>
+        <div class="weather-temperature">
+          <p class="temperature"></p>
+          <span id="deg"></span>
         </div>
-        <div class="search-bar" id="search-bar">
-            <input type="text" class='search' id="search" placeholder='Start typing'>
-        </div>
-        <div class="header__weather" id="header__weather">
-            <div class="weather-loading"></div>
-            <div class="weather-location">
-                <div id="location-timezone"></div>
-            </div>
-            <div class="weather-container">
-                <div class="icon-weather">
-                    <canvas id="icon" width="80" height="80"></canvas>
-                </div>
-                <div class="weather-temperature">
-                    <p class="temperature"></p><span id="deg"></span>
-                </div>
-            </div>
-            <div class="header__description">
-                <div id="temperature-description"></div>
-            </div>
-        </div>
+      </div>
+      <div class="header__description">
+        <div id="temperature-description"></div>
+      </div>
+    </div>
 
-        <div class="header__search search">
-            <div class="search__location-text" id="other-locations">
-                Other Locations
-            </div>
-            <div class="search__location-description" id="description">
-                Click the button above to add more cities
-            </div>
-        </div>
+    <div class="header__search search">
+      <div class="search__location-text" id="other-locations">
+        Other Locations
+      </div>
+      <div class="search__location-description" id="description">
+        Click the button above to add more cities
+      </div>
+    </div>
 
-        <div class="header__add-locations">
-            <i class="add-locations fas fa-plus" id="add-locations"></i>
-        </div>
-    </header>
-    <footer class="footer">
-        <div class="footer-content" id="footer-content">
-            Created by <span id="author"><a target="_blank" href="http://www.razvanpetru.com">Razvan Petru</a></span>
-            with <a href="https://api.darksky.net/" id="author" target="_blank">DarkSky</a> API
-        </div>
-    </footer>
+    <div class="header__add-locations">
+      <i class="add-locations fas fa-plus" id="add-locations"></i>
+    </div>
+  </header>
+  <footer class="footer">
+    <div class="footer-content" id="footer-content">
+      Created by
+      <span id="author"><a target="_blank" href="http://www.razvanpetru.com">Razvan Petru</a></span>
+      with
+      <a href="https://api.darksky.net/" id="author" target="_blank">DarkSky</a>
+      API
+    </div>
+  </footer>
 
-    <script src="public/js/skycons.js"></script>
-    <script src="./public/js/app.js"></script>
+  <script src="public/js/skycons.js"></script>
+  <script src="./public/js/app.js"></script>
 </body>
 
 </html>
