@@ -13,6 +13,11 @@ app.use(
     extended: true,
   })
 );
+app.all('/', function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+});
 
 app.get("/", (req, res) => {
   res.sendfile(__dirname + "/index.html");
