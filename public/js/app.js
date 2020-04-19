@@ -18,40 +18,49 @@ window.addEventListener("load", () => {
       const proxy = "https://cors-anywhere.herokuapp.com/";
       const api = `${proxy}api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`;
 
-      // http://openweathermap.org/img/w/04d.png
       fetch(api)
         .then((response) => {
           return response.json();
         })
-        .then((data) => {
-          // loading !!
-          document.querySelectorAll(".weather-loading").forEach((b) => {
-            b.style.display = "none";
-          });
-
-          const { country } = data.sys;
-          currentCountry.innerHTML = country;
-          currentLocation.innerHTML = data.name + ",";
-
-          let weather = data.weather;
-          weather.forEach((data) => {
-            const { description, icon } = data;
-
-            currentIcon.innerHTML = `<img id="icon" src="http://openweathermap.org/img/w/${icon}.png">`;
-            temperatureSummary.innerHTML = description;
-          });
-
-          // celsius
-          let temp = data.main.temp;
-          let celsius = temp - 273.15;
-          temperatureDegree.innerHTML = Math.floor(celsius);
-          degree.innerHTML = "&#8451";
-        })
+        .then(weather)
         .catch((error) => {
           console.log("Error", error);
         });
     });
   }
+
+  function weather(data) {
+    // loading !!
+    document.querySelectorAll(".weather-loading").forEach((b) => {
+      b.style.display = "none";
+    });
+
+    const {
+      country
+    } = data.sys;
+    currentCountry.innerHTML = country;
+    currentLocation.innerHTML = data.name + ",";
+
+    let weather = data.weather;
+    weather.forEach((data) => {
+      const {
+        description,
+        icon
+      } = data;
+
+      console.log(data);
+
+      currentIcon.innerHTML = `<img id="icon" src="/public/img/${icon}.png">`;
+      temperatureSummary.innerHTML = description;
+    });
+
+    // celsius
+    let temp = data.main.temp;
+    let celsius = temp - 273.15;
+    temperatureDegree.innerHTML = Math.floor(celsius);
+    degree.innerHTML = "&#8451";
+  }
+
 });
 
 // var for checkbox toggle and search bar
