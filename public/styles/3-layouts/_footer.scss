@@ -7,11 +7,7 @@
 
         #author,
         a {
-            color: $purple-color;
+            color: var(--font-color);
         }
     }
-}
-
-#footer-content.black {
-    color: $black-color;
 }

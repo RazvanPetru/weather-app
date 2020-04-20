@@ -42,16 +42,16 @@ window.addEventListener("load", () => {
     currentLocation.innerHTML = data.name + ",";
 
     let weather = data.weather;
-    weather.forEach((data) => {
+    weather.map((data) => {
       const {
-        description,
+        main,
         icon
       } = data;
 
       console.log(data);
 
       currentIcon.innerHTML = `<img id="icon" src="./public/img/${icon}.png">`;
-      temperatureSummary.innerHTML = description;
+      temperatureSummary.innerHTML = main;
     });
 
     // celsius
@@ -60,96 +60,4 @@ window.addEventListener("load", () => {
     temperatureDegree.innerHTML = Math.floor(celsius);
     degree.innerHTML = "&#8451";
   }
-
 });
-
-// var for checkbox toggle and search bar
-const checkbox = document.getElementById("checkbox");
-const searchDesc = document.getElementById("description");
-const addLocation = document.getElementById("current-location");
-const deg = document.getElementById("deg");
-const footerContent = document.getElementById("footer-content");
-const weatherContainer = document.getElementById("header__weather");
-const dailyContainer = document.querySelectorAll(".daily__weather");
-const otherLocations = document.getElementById("other-locations");
-
-//search bar var
-const searchBar = document.getElementById("search-bar");
-const searchInput = document.getElementById("search");
-const closeSearch = document.getElementById("close-search");
-// hide the search bar from main page
-closeSearch.style.display = "none";
-searchBar.style.display = "none";
-
-// checkbox for changing the color of the theme
-const darkMode = localStorage.getItem("darkMode");
-
-function changeTheme() {
-  checkbox.addEventListener("change", () => {
-    //body black color
-    document.body.classList.toggle("dark");
-
-    searchDesc.classList.toggle("dark");
-
-    addLocation.classList.toggle("dark");
-
-    deg.classList.toggle("black");
-
-    footerContent.classList.toggle("black");
-
-    searchInput.style.color = "black";
-
-    document.querySelectorAll("#header__weather").forEach((b) => {
-      b.classList.toggle("white");
-    });
-
-    localStorage.getItem("darkMode");
-  });
-}
-
-// Btn for adding more locations
-
-function addLocations() {
-  let addLocations = document.getElementById("add-locations");
-  addLocations.addEventListener("click", () => {
-    weatherContainer.style.display = "none";
-    addLocation.innerHTML = "Add new location";
-    // add the search bar
-    searchBar.style.display = "block";
-    closeSearch.style.display = "block";
-
-    otherLocations.style.display = "none";
-
-    addLocations.style.display = "none";
-
-    searchDesc.style.display = "none";
-
-    closeSearch.addEventListener("click", () => {
-      window.history.go(0);
-    });
-  });
-}
-
-function weatherDetails() {
-  let addLocations = document.getElementById("add-locations");
-  weatherContainer.addEventListener("click", () => {
-    addLocations.style.display = "none";
-    otherLocations.style.display = "none";
-
-    dailyContainer.forEach((b) => {
-      b.style.display = "block";
-    });
-
-    searchDesc.style.display = "none";
-
-    closeSearch.style.display = "block";
-
-    closeSearch.addEventListener("click", () => {
-      window.history.go(0);
-    });
-  });
-}
-
-changeTheme();
-addLocations();
-weatherDetails();

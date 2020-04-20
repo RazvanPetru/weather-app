@@ -1,12 +1,41 @@
-// COLORS
-$black-color: #090d28;
-$bleumarin-color: #181c3a;
-$purple-color: #7768e5;
+//colors
 $blue-color: #353688;
-$blue-matte-color: #21264e;
 $white-color: #ffffff;
-$grey-color: #c5c5c5;
-$red-color: #c51c1c;
+
+:root {
+    //blue color
+    --primary-color: #ffffff;
+    //purple color
+    --secondary-color: #353688;
+    // blue matte color
+    --third-color: #ffffff;
+    // white color
+    --font-color: #090d28;
+    // red color
+    --second-font-color: #c51c1c;
+    // grey color
+    --third-font-color: #090d28;
+    // black color
+    --bg-color: #ffffff;
+}
+
+[data-theme='dark'] {
+    //blue color
+    --primary-color: #353688;
+    //purple color
+    --secondary-color: #7768e5;
+    // blue matte color
+    --third-color: #21264e;
+    // white color
+    --font-color: #ffffff;
+    // red color
+    --second-font-color: #c51c1c;
+    // grey color
+    --third-font-color: #c5c5c5;
+    // black color
+    --bg-color: #090d28;
+}
+
 // FONTS
 
 $roboto:'Roboto',
