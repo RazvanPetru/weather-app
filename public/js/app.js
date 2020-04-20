@@ -4,7 +4,7 @@ window.addEventListener("load", () => {
   const temperatureDegree = document.querySelector(".temperature");
   const temperatureSummary = document.querySelector("#temperature-description");
   const currentIcon = document.querySelector(".icon-weather");
-  const degree = document.querySelector("#deg");
+  const degree = document.getElementById("deg");
 
   let lon;
   let lat;
@@ -31,6 +31,7 @@ window.addEventListener("load", () => {
 
   function weather(data) {
     // loading !!
+    console.log(data);
     document.querySelectorAll(".weather-loading").forEach((b) => {
       b.style.display = "none";
     });
@@ -38,6 +39,7 @@ window.addEventListener("load", () => {
     const {
       country
     } = data.sys;
+
     currentCountry.innerHTML = country;
     currentLocation.innerHTML = data.name + ",";
 
@@ -48,16 +50,18 @@ window.addEventListener("load", () => {
         icon
       } = data;
 
-      console.log(data);
-
       currentIcon.innerHTML = `<img id="icon" src="./public/img/${icon}.png">`;
       temperatureSummary.innerHTML = main;
     });
 
     // celsius
-    let temp = data.main.temp;
-    let celsius = temp - 273.15;
+    let tempMax = data.main.temp_max;
+    let tempMin = data.main.temp_min;
+    let tempFull = data.main.temp;
+    let celsius = tempFull - 273.15;
     temperatureDegree.innerHTML = Math.floor(celsius);
+    document.getElementById('temp-min').innerHTML = Math.floor(tempMin - 273.15) + "&#8451";
+    document.getElementById('temp-max').innerHTML = Math.floor(tempMax - 273.15) + "&#8451 " + '-';
     degree.innerHTML = "&#8451";
   }
 });
