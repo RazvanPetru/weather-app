@@ -4,7 +4,7 @@ const Dotenv = require("dotenv-webpack");
 const MomentLocalesPlugin = require("moment-locales-webpack-plugin");
 
 module.exports = {
-  entry: ["@babel/polyfill", "./src/js/app.js"],
+  entry: ["@babel/polyfill", "./public/js/app.js"],
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "js/bundle.js",
@@ -21,8 +21,7 @@ module.exports = {
     new MomentLocalesPlugin(),
   ],
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
