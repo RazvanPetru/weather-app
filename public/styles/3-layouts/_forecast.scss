@@ -1,0 +1,61 @@
+.forecast {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        box-shadow: 1px 10px 40px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease-in-out;
+        border-radius: 0.5rem;
+        background-color: var(--third-color);
+        margin-top: 3rem;
+        width: 100%;
+        height: 100%;
+
+        @include breakpoint(small) {
+            width: 40rem;
+        }
+
+        &:hover {
+            background-color: var(--forecast-color);
+            color: $white-color;
+        }
+
+        &-date {
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+
+        &-weather,
+        .forecast {
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            &-icon {
+                margin-left: 3rem;
+            }
+
+            &-temp {
+                margin-right: 3rem;
+                display: flex;
+            }
+        }
+    }
+}
+
+.forecast-description {
+    text-align: center;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    color: var(--secondary-color);
+}
+
+.forecast__container:hover .forecast-description {
+    color: $purple-color;
+}

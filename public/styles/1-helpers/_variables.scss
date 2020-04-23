@@ -1,6 +1,7 @@
 //colors
 $blue-color: #353688;
 $white-color: #ffffff;
+$purple-color: #7768e5;
 
 :root {
     //blue color
@@ -17,6 +18,8 @@ $white-color: #ffffff;
     --third-font-color: #090d28;
     // black color
     --bg-color: #ffffff;
+    // forecast color
+    --forecast-color: #353688;
 }
 
 [data-theme='dark'] {
@@ -34,11 +37,15 @@ $white-color: #ffffff;
     --third-font-color: #c5c5c5;
     // black color
     --bg-color: #090d28;
+    //forecast color
+    --forecast-color: #353688;
 }
 
 // FONTS
 
 $roboto:'Roboto',
+sans-serif;
+$montserrat: 'Montserrat',
 sans-serif;
 
 // BREAKPOINTS
