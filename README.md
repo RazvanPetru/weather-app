@@ -1,5 +1,5 @@
 # weather-app
-## [Check it here!](https://razvanpetru.github.io/portfolio/)
+## [Check it here!](https://www.razvanpetru.com)
 
 Project made from scratch using Vanilla Javascript
 
