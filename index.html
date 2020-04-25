@@ -21,7 +21,7 @@
     </label>
   </nav>
 
-  <header class="header">
+  <div class="header">
     <div class="header__timezone">
       <div id="current-location">
         <i class="fas fa-map-marker-alt"></i> Current location
@@ -54,40 +54,54 @@
 
     <div class="header__search search">
       <div class="search__location-text" id="other-locations">
-        <i class="fas fa-arrow-down"></i> Forecast for 5 days
+        Forecast for the next 5 days
       </div>
     </div>
 
     <div class="forecast">
       <div class="weather-loading"></div>
-      <!-- <div class="forecast__container">
-          <div class="forecast__container-date">
-            Friday
-          </div>
-          <div class="forecast__container-weather forecast">
-            <div class="forecast-icon">
-              <img src="./public/img/02d.png" width="50" height="50" />
-            </div>
-            <div class="forecast-temp">
-              <div class="temp-max" id="temp-max">10&#8451</div>
-              <div class="temp-min" id="temp-min">2&#8451</div>
-            </div>
-          </div>
-        </div> -->
-    </div>
-  </header>
 
-  <footer class="footer">
-    <div class="footer-content" id="footer-content">
-      Created by
-      <span id="author"><a target="_blank" href="http://www.razvanpetru.com">Razvan Petru</a></span>
-      with
-      <a href="https://openweathermap.org/" id="author" target="_blank">OpenWeather</a>
-      API
+      <!-- <div class="forecast__container">
+        <div class="forecast__container-date">
+          Friday
+        </div>
+
+        <div class="forecast__container-weather forecast">
+          <div class="forecast__temp-icon">
+            <img src="./public/img/02d.png" width="50" height="50" />
+          </div>
+          <div class="forecast__temp-details temp">
+            <div class="temp-desc">Clouds</div>
+            <div class="temp-details">
+              <div class="temp-max">10</div>
+              <div class="temp-min">10</div>
+            </div>
+          </div>
+
+          <div class="forecast__container-temp">
+            <div class="temp">10</div>
+          </div>
+
+        </div>
+      </div>
+    </div> -->
+
     </div>
-  </footer>
-  <script src="./public/js/app.js"></script>
-  <script src="./public/js/forecastView.js"></script>
+    </header>
+
+    <footer class="footer">
+      <div class="footer-content" id="footer-content">
+        Created by
+        <span id="author"><a target="_blank" href="http://www.razvanpetru.com">Razvan Petru</a></span>
+        with
+        <a href="https://openweathermap.org/" id="author" target="_blank">OpenWeather</a>
+        API
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./public/js/app.js"></script>
+    <script src="./public/js/forecastView.js"></script>
 </body>
 
 </html>

@@ -25,131 +25,44 @@ window.addEventListener("load", () => {
 
           const daily = data.list;
 
-          console.log(daily);
+          daily.forEach(data => {
+            const date = moment
+              .unix(data.dt)
+              .utc()
+              .format('dddd, Do MMMM, HH:mm');
+            const icon = data.weather[0].icon;
+            const temp = Math.floor(data.main.temp - 273.15);
+            const temp_max = Math.floor(data.main.temp_max - 273.15);
+            const temp_min = Math.floor(data.main.temp_min - 273.15);
+            const description = data.weather[0].main;
 
-          // i know is not the best solution
-          const markup = `
-        <div class="forecast__container">
-          <div class="forecast__container-date">
-            ${daily[0].dt_txt.substr(0, 10)}
-          </div>
-          <div class="forecast__container-weather forecast">
-            <div class="forecast-icon">
-              <img src="./public/img/${
-                daily[0].weather[0].icon
-              }.png" width="50" height="50" />
-            </div>
-            <div class="forecast-temp">
-              <div class="temp-max" id="temp-max">
-              ${Math.floor(daily[0].main.temp_max - 273.15) + "&#8451" + "-"}
-            </div>
-              <div class="temp-min" id="temp-min">
-              ${Math.floor(daily[0].main.temp_min - 273.15) + "&#8451"}
-              </div>
-            </div>
-          </div>
-        <div class="forecast-description">
-        ${daily[0].weather[0].description}
-        </div>
+            let markup = `<div class="forecast__container">
+        <div class="forecast__container-date">
+          ${date}
         </div>
 
-        <div class="forecast__container">
-          <div class="forecast__container-date">
-            ${daily[4].dt_txt.substr(0, 10)}
+        <div class="forecast__container-weather forecast">
+          <div class="forecast__temp-icon">
+            <img src="./public/img/${icon}.png" width="60" height="60" />
           </div>
-          <div class="forecast__container-weather forecast">
-            <div class="forecast-icon">
-              <img src="./public/img/${
-                daily[4].weather[0].icon
-              }.png" width="50" height="50" />
-            </div>
-            <div class="forecast-temp">
-              <div class="temp-max" id="temp-max">
-              ${Math.floor(daily[4].main.temp_max - 273.15) + "&#8451" + "-"}
-            </div>
-              <div class="temp-min" id="temp-min">
-              ${Math.floor(daily[4].main.temp_min - 273.15) + "&#8451"}
-              </div>
+          <div class="forecast__temp-details temp">
+            <div class="temp-desc">${description}</div>
+            <div class="temp-details">
+              <div id="temp-max" class="temp-max">${temp_max + "&#8451 " + "-"}</div>
+              <div id="temp-max" class="temp-min">${temp_min + " &#8451"}</div>
             </div>
           </div>
-        <div class="forecast-description">
-        ${daily[4].weather[0].description}
-        </div>
-        </div>
 
-        <div class="forecast__container">
-          <div class="forecast__container-date">
-            ${daily[15].dt_txt.substr(0, 10)}
+          <div class="forecast__container-temp">
+            <div class="temp">${temp + "&#8451"}</div>
           </div>
-          <div class="forecast__container-weather forecast">
-            <div class="forecast-icon">
-              <img src="./public/img/${
-                daily[15].weather[0].icon
-              }.png" width="50" height="50" />
-            </div>
-            <div class="forecast-temp">
-              <div class="temp-max" id="temp-max">
-              ${Math.floor(daily[15].main.temp_max - 273.15) + "&#8451" + "-"}
-            </div>
-              <div class="temp-min" id="temp-min">
-              ${Math.floor(daily[15].main.temp_min - 273.15) + "&#8451"}
-              </div>
-            </div>
-          </div>
-        <div class="forecast-description">
-        ${daily[15].weather[0].description}
-        </div>
-        </div>
 
-         <div class="forecast__container">
-          <div class="forecast__container-date">
-            ${daily[23].dt_txt.substr(0, 10)}
-          </div>
-          <div class="forecast__container-weather forecast">
-            <div class="forecast-icon">
-              <img src="./public/img/${
-                daily[23].weather[0].icon
-              }.png" width="50" height="50" />
-            </div>
-            <div class="forecast-temp">
-              <div class="temp-max" id="temp-max">
-              ${Math.floor(daily[23].main.temp_max - 273.15) + "&#8451" + "-"}
-            </div>
-              <div class="temp-min" id="temp-min">
-              ${Math.floor(daily[23].main.temp_min - 273.15) + "&#8451"}
-              </div>
-            </div>
-          </div>
-        <div class="forecast-description">
-        ${daily[23].weather[0].description}
         </div>
-        </div>
+      </div>
+    </div>`
 
-        <div class="forecast__container">
-          <div class="forecast__container-date">
-            ${daily[30].dt_txt.substr(0, 10)}
-          </div>
-          <div class="forecast__container-weather forecast">
-            <div class="forecast-icon">
-              <img src="./public/img/${
-                daily[30].weather[0].icon
-              }.png" width="50" height="50" />
-            </div>
-            <div class="forecast-temp">
-              <div class="temp-max" id="temp-max">
-              ${Math.floor(daily[30].main.temp_max - 273.15) + "&#8451" + "-"}
-            </div>
-              <div class="temp-min" id="temp-min">
-                ${Math.floor(daily[30].main.temp_min - 273.15) + "&#8451"}
-              </div>
-            </div>
-          </div>
-        <div class="forecast-description">
-        ${daily[30].weather[0].description}
-        </div>
-        </div>
-        `;
-          element.innerHTML = markup;
+            element.insertAdjacentHTML('beforeend', markup);
+          })
         })
         .catch((error) => {
           console.log("Error", error);

@@ -15,11 +15,14 @@ $purple-color: #7768e5;
     // red color
     --second-font-color: #c51c1c;
     // grey color
-    --third-font-color: #090d28;
+    --third-font-color: #c5c5c5;
     // black color
     --bg-color: #ffffff;
     // forecast color
     --forecast-color: #353688;
+
+    //temperature color
+    --temp-color: #c51c1c;
 }
 
 [data-theme='dark'] {
@@ -32,13 +35,16 @@ $purple-color: #7768e5;
     // white color
     --font-color: #ffffff;
     // red color
-    --second-font-color: #c51c1c;
+    --second-font-color: #7768e5;
     // grey color
-    --third-font-color: #c5c5c5;
+    --third-font-color: #7768e5;
     // black color
     --bg-color: #090d28;
     //forecast color
     --forecast-color: #353688;
+
+    //temperature color
+    --temp-color: #ffffff;
 }
 
 // FONTS
