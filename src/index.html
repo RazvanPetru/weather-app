@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles/main.css" />
+</head>
+
+<body>
+  <nav class="nav">
+    <input type="checkbox" class="checkbox" id="checkbox" />
+    <label for="checkbox" class="label">
+      <i class="fas fa-moon"></i>
+      <i class="fas fa-sun"></i>
+      <div class="ball"></div>
+    </label>
+  </nav>
+
+  <div class="header">
+    <div class="header__timezone">
+      <div id="current-location">
+        <i class="fas fa-map-marker-alt"></i> Current location
+      </div>
+    </div>
+
+    <div class="header__weather" id="header__weather">
+      <div class="weather-loading"></div>
+      <div class="weather-location">
+        <div class="location-timezone">
+          <p id="location"></p>
+          <p id="country"></p>
+        </div>
+      </div>
+      <div class="weather-container">
+        <div class="icon-weather"></div>
+        <div class="weather-temperature">
+          <p class="temperature"></p>
+          <span id="deg"></span>
+        </div>
+      </div>
+      <div class="header__description">
+        <div id="temperature-description"></div>
+        <div class="temperature-limit">
+          <span id="temp-max"></span>
+          <span id="temp-min"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="header__search search">
+      <div class="search__location-text" id="other-locations">
+        Forecast for the next 5 days
+      </div>
+    </div>
+
+
+    </header>
+
+    <div class="forecast">
+      <div class="weather-loading"></div>
+
+      <!-- <div class="forecast__container">
+        <div class="forecast__container-date">
+          Friday
+        </div>
+
+        <div class="forecast__container-weather forecast">
+          <div class="forecast__temp-icon">
+            <img src="./public/img/02d.png" width="50" height="50" />
+          </div>
+          <div class="forecast__temp-details temp">
+            <div class="temp-desc">Clouds</div>
+            <div class="temp-details">
+              <div class="temp-max">10</div>
+              <div class="temp-min">10</div>
+            </div>
+          </div>
+
+          <div class="forecast__container-temp">
+            <div class="temp">10</div>
+          </div> -->
+
+    </div>
+  </div>
+  </div>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content" id="footer-content">
+      Created by
+      <span id="author"><a target="_blank" href="http://www.razvanpetru.com">Razvan Petru</a></span>
+      with
+      <a href="https://openweathermap.org/" id="author" target="_blank">OpenWeather</a>
+      API
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+</body>
+
+</html>
