@@ -45,7 +45,7 @@ window.addEventListener("load", () => {
 
                 <div class="forecast__container-weather forecast">
                   <div class="forecast__temp-icon">
-                    <img src="./src/img/${icon}.png" width="60" height="60" />
+                    <img src="./img/${icon}.png" width="60" height="60" />
                   </div>
                   <div class="forecast__temp-details temp">
                     <div class="temp-desc">${description}</div>

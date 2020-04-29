@@ -54,7 +54,7 @@ window.addEventListener("load", () => {
         icon
       } = data;
 
-      currentIcon.innerHTML = `<img id="icon" src="./src/img/${icon}.png">`;
+      currentIcon.innerHTML = `<img id="icon" src="./img/${icon}.png">`;
       temperatureSummary.innerHTML = main;
     });
 
