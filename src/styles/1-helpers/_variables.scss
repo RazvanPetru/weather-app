@@ -1,0 +1,70 @@
+//colors
+$blue-color: #353688;
+$white-color: #ffffff;
+$purple-color: #7768e5;
+
+:root {
+    //blue color
+    --primary-color: #ffffff;
+    //purple color
+    --secondary-color: #353688;
+    // blue matte color
+    --third-color: #ffffff;
+    // white color
+    --font-color: #090d28;
+    // red color
+    --second-font-color: #c51c1c;
+    // grey color
+    --third-font-color: #c5c5c5;
+    // black color
+    --bg-color: #ffffff;
+    // forecast color
+    --forecast-color: #353688;
+
+    //temperature color
+    --temp-color: #c51c1c;
+}
+
+[data-theme='dark'] {
+    //blue color
+    --primary-color: #353688;
+    //purple color
+    --secondary-color: #7768e5;
+    // blue matte color
+    --third-color: #21264e;
+    // white color
+    --font-color: #ffffff;
+    // red color
+    --second-font-color: #7768e5;
+    // grey color
+    --third-font-color: #7768e5;
+    // black color
+    --bg-color: #090d28;
+    //forecast color
+    --forecast-color: #353688;
+
+    //temperature color
+    --temp-color: #ffffff;
+}
+
+// FONTS
+
+$roboto:'Roboto',
+sans-serif;
+$montserrat: 'Montserrat',
+sans-serif;
+
+// BREAKPOINTS
+
+$breakpoints: (small: 499px,
+    medium: 899px,
+    large: 999px,
+    extra-large: 1399px);
+
+@mixin breakpoint($size) {
+    $breakpoint-value: map-get($breakpoints, $size);
+
+    @media screen and (min-width: $breakpoint-value) {
+        @content;
+    }
+}

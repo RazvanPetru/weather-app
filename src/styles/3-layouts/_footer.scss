@@ -1,0 +1,14 @@
+.footer {
+    margin-top: 10rem;
+    margin-bottom: 3rem;
+    height: 100%;
+
+    &-content {
+        font-size: 1.2rem;
+
+        #author,
+        a {
+            color: var(--font-color);
+        }
+    }
+}
