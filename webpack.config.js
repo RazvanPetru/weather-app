@@ -15,7 +15,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: "./index.html",
+      template: "./src/index.html",
     }),
     new Dotenv(),
     new MomentLocalesPlugin(),
