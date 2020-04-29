@@ -1,8 +1,3 @@
-import forecast from "./forecast";
-
-// styles SASS
-import "../styles/main.scss";
-
 window.addEventListener("load", () => {
   const currentLocation = document.querySelector("#location");
   const currentCountry = document.querySelector("#country");
