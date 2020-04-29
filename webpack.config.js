@@ -8,6 +8,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "js/bundle.js",
+    publicPath: "/weather-app/",
   },
   devServer: {
     contentBase: "./dist",
@@ -21,7 +22,8 @@ module.exports = {
     new MomentLocalesPlugin(),
   ],
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
